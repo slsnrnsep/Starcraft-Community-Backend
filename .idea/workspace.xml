@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1e4e30ff-306d-43fe-a9b7-e69cf13f2db2" name="변경" comment="" />
+    <list default="true" id="1e4e30ff-306d-43fe-a9b7-e69cf13f2db2" name="변경" comment="변경" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,6 +30,7 @@
       <option name="presentableId" value="Default" />
       <updated>1633921479385</updated>
       <workItem from="1633921480724" duration="193000" />
+      <workItem from="1633923076784" duration="111000" />
     </task>
     <servers />
   </component>
