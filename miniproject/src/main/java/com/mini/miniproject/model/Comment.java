@@ -19,15 +19,26 @@ public class Comment {
     private String userNick;
 
     @Column(nullable = false)
-    private String content
+    private String content;
 
 //    @Column(nullable = false)
 //    private Long postId;
 
-    ;
 
-    public Comment(CommentDto reqDto)
+
+    public Comment(CommentDto reqDto, Long userId) {
+        this.id = userId;
+        this.userNick = reqDto.getUserNick();
+        this.content = reqDto.getContent();
+    }
+
+    public Comment(CommentDto reqDto,Long userId,String content)
     {
+        this.id = userId;
+        this.userNick = reqDto.getUserNick();
+        this.content = content;
+    }
+    public void update(CommentDto reqDto) {
         this.content = reqDto.getContent();
     }
 }

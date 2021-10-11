@@ -5,13 +5,14 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 import java.util.List;
 
 @Setter
 @Getter // get 함수를 일괄적으로 만들어줍니다.
 @NoArgsConstructor // 기본 생성자를 만들어줍니다.
 @Entity // DB 테이블 역할을 합니다.
-public class Post {
+public class Post extends Timestamp {
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Id
     private Long id;
@@ -33,8 +34,38 @@ public class Post {
 
     //file관련 컬럼하나
 
-    public Post(PostDto reqDto) // 제목,내용,카테고리작성자는 따로 userdetails에서
-    {
+    //제목,내용,카테고리작성자는 따로 userdetails에서
 
+
+    public Post(PostDto reqdto,String username, String content) {
+        this.userNick = username;
+        this.title = reqdto.getTitle();
+        this.content = content;
+        this.categori = reqdto.getCategori();
+    }
+
+    public Post(PostDto reqdto,String userNick) {
+        this.userNick = userNick;
+        this.title = reqdto.getTitle();
+        this.content = reqdto.getContent();
+        this.categori = reqdto.getCategori();
+    }
+    public Post(String title,String userNick,String content) {
+        this.userNick = userNick;
+        this.title = title;
+        this.content = content;
+        this.categori = reqdto.getCategori();
+    }
+    public Post(PostDto reqdto) {
+        this.userNick = reqdto.getUserNick();
+        this.title = reqdto.getTitle();
+        this.content = reqdto.getContent();
+        this.categori = reqdto.getCategori();
+    }
+    public void update(PostDto reqDto) {
+        this.title = reqDto.getTitle();
+        this.userNick = reqDto.getUserNick();
+        this.content = reqDto.getContent();
+        this.categori = reqDto.getCategori();
     }
 }
