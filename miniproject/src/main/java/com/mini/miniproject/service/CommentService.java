@@ -2,7 +2,9 @@ package com.mini.miniproject.service;
 
 import com.mini.miniproject.model.Comment;
 import com.mini.miniproject.model.CommentDto;
+import com.mini.miniproject.model.Post;
 import com.mini.miniproject.repository.CommentRepository;
+import com.mini.miniproject.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +16,7 @@ import java.util.List;
 public class CommentService {
 
     private final CommentRepository commentRepository;
+    private final PostRepository postRepository;
 
     //댓글 조회
     public List<Comment> getComment(Long postId) {
@@ -34,7 +37,12 @@ public class CommentService {
 
         // 요청받은 DTO 로 DB에 저장할 객체 만들기
         Comment comment = new Comment(reqDto);
-        commentRepository.save(comment);
+        Post post = postRepository.findById(reqDto.getPostId()).orElse(null);
+        if(post != null)
+        {
+            commentRepository.save(comment);
+            post.addComment(comment);
+        }
         return comment;
 
     }

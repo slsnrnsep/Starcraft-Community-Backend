@@ -1,8 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>마이 페이보릿 무비스타 | 프론트-백엔드 연결 마지막 예제!</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"/>
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    <script>
+        function showPosts()
+        {
+            $('#post-box').empty();
+            $.ajax({
+                type: 'GET',
+                url: '/api/post',
+                success: function (response) {
+                    for (let i = 0; i < response.length; i++) {
+                        let post = response[i];
+                        let temphtml = gethtml(post);
+                        console.log(temphtml);
+                        $('#post-box').append(temphtml);
+                    }
+                }
+            })
+        }
+
+        function gethtml(post) {
+            // link, image, title, lprice, myprice 변수 활용하기
+            return `<tr>
+                <td>${post.userNick}</td>
+                <td>${post.title}</td>
+                <td>${post.createdAt}</td>
+            </tr>`
+        }
+    </script>
 </head>
 <body>
 <form action="/user/login" method="post">
@@ -12,10 +48,34 @@
     <div class="login-id-label">비밀번호</div>
     <input type="password" name="password" class="login-input-box">
 
-    <button id="login-id-submit">로그인</button>
+    <button>로그인</button>
 </form>
+
 <form action="/test">
-    <button id="login-id-submit">로그인</button>
+    <button >로그인</button>
 </form>
+
+<form action="/dbSet">
+    <button >데이터베이스</button>
+</form>
+<button onclick = "view(0)">카테고리0번꺼 불러오기</button>
+<button onclick = "view(1)">카테고리1번꺼 불러오기</button>
+<button onclick = "view(2)">카테고리2번꺼 불러오기</button>
+<button onclick = "showPosts()">전체 불러오기</button>
+<br>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">글쓴사람</th>
+        <th scope="col">제목</th>
+        <th scope="col">날짜</th>
+        <th scope="col">좋아용</th>
+    </tr>
+    </thead>
+    <tbody id="post-box">
+    </tbody>
+</table>
+
+
 </body>
 </html>

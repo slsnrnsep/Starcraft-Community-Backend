@@ -8,4 +8,5 @@ import lombok.Setter;
 public class CommentDto {
     private String content;
     private String userNick;
+    private Long postId;
 }
