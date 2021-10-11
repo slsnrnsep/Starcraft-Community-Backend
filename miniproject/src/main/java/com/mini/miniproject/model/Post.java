@@ -68,4 +68,7 @@ public class Post extends Timestamped {
         this.content = reqDto.getContent();
         this.categori = reqDto.getCategori();
     }
+    public void addComment(Comment comment) {
+        this.commentList.add(comment);
+    }
 }

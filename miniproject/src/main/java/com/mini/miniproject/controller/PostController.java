@@ -22,7 +22,7 @@ public class PostController {
     @PostMapping("/api/post")
     public Post createPosts(@RequestBody PostDto reqdto, @AuthenticationPrincipal UserDetailsImpl userDetails)
     {
-        String username = userDetails.getUser().getUserNick();
+        String username = "tmdwns123";
         Post posts = postService.createPosts(reqdto,username);
         return posts;
     }
@@ -47,7 +47,7 @@ public class PostController {
     @GetMapping("/api/post/categori/{categori}")
     public List<Post> getCategoriPosts(@PathVariable Long categori)
     {
-        List<Post> posts = postRepository.findAllById(categori);
+        List<Post> posts = postRepository.findAllByCategori(categori);
         return posts;
     }
 
