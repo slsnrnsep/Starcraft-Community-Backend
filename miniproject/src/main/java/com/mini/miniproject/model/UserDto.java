@@ -11,5 +11,6 @@ import javax.persistence.Id;
 public class UserDto {
     private String id;
     private String password;
+    private String passwordconfirm;
     private String userNick;
 }
