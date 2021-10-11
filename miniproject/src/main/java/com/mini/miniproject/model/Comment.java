@@ -24,10 +24,7 @@ public class Comment {
 //    @Column(nullable = false)
 //    private Long postId;
 
-
-
-    public Comment(CommentDto reqDto, Long userId) {
-        this.id = userId;
+    public Comment(CommentDto reqDto) {
         this.userNick = reqDto.getUserNick();
         this.content = reqDto.getContent();
     }

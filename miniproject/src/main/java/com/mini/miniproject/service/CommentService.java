@@ -17,21 +17,23 @@ public class CommentService {
 
     //댓글 조회
     public List<Comment> getComment(Long postId) {
-        return commentRepository.findAllByPostidOrderByCreatedAtDesc(postId);
+//        return commentRepository.findAllByPostidOrderByCreatedAtDesc(postId);
+        return null;
     }
 
     //댓글 작성 서비스
     @Transactional
-    public Comment createComment(CommentDto reqDto, Long userId) {
+    public Comment createComment(CommentDto reqDto) {
         String CommentCheck = reqDto.getContent();
         if(CommentCheck.contains("script")||CommentCheck.contains("<")||CommentCheck.contains(">"))
         {
-            Comment comment = new Comment(reqDto, userId,"xss 안돼요,, 하지마세요ㅠㅠ");
-            commentRepository.save(comment);
-            return comment;
+//            Comment comment = new Comment(reqDto, userId,"xss 안돼요,, 하지마세요ㅠㅠ");
+//            commentRepository.save(comment);
+            return null;
         }
+
         // 요청받은 DTO 로 DB에 저장할 객체 만들기
-        Comment comment = new Comment(reqDto,userId);
+        Comment comment = new Comment(reqDto);
         commentRepository.save(comment);
         return comment;
 

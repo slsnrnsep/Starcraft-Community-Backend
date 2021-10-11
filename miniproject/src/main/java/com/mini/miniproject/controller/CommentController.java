@@ -16,25 +16,29 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 public class CommentController {
+
     private final CommentRepository commentRepository;
     private final CommentService commentService;
 
 
-    //로그인 유저 댓글 조회
-    @GetMapping("/api/comment")
-    public List<Comment> getComment(@AuthenticationPrincipal UserDetailsImpl userDetails)
-    {
-        Long userId = userDetails.getUser().getId();
-        return CommentService.getComment(userId);
-    }
+//    //로그인 유저 댓글 조회
+//    @GetMapping("/api/comment")
+//    public List<Comment> getComment(@AuthenticationPrincipal UserDetailsImpl userDetails)
+//    {
+//        Long userId = userDetails.getUser().getId();
+//        return CommentService.getComment(userId);
+//    }
 
     //댓글 작성
     @PostMapping("/api/comment")
     public boolean createReply(@RequestBody CommentDto reqDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
         // 로그인 되어 있는 ID
         if (userDetails != null) {
-            Long userId = userDetails.getUser().getId();
-            commentService.createComment(reqDto, userId);
+            String userId = userDetails.getUser().getId();
+            reqDto.setUserNick(userId);
+            commentService.createComment(reqDto);
+            //null나오면 false되도록
+//            if(commentService.createComment(reqDto))
             return true;
         }
         return false;
