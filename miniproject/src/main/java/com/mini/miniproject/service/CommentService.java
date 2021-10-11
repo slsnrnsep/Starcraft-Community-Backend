@@ -25,7 +25,6 @@ public class CommentService {
     }
 
     //댓글 작성 서비스
-    @Transactional
     public Comment createComment(CommentDto reqDto) {
         String CommentCheck = reqDto.getContent();
         if(CommentCheck.contains("script")||CommentCheck.contains("<")||CommentCheck.contains(">"))
@@ -37,11 +36,13 @@ public class CommentService {
 
         // 요청받은 DTO 로 DB에 저장할 객체 만들기
         Comment comment = new Comment(reqDto);
-        Post post = postRepository.findById(reqDto.getPostId()).orElse(null);
+        Post post = postRepository.findById(reqDto.getPostId())
+                .orElse(null);
         if(post != null)
         {
             commentRepository.save(comment);
             post.addComment(comment);
+            postRepository.save(post);
         }
         return comment;
 
@@ -55,5 +56,13 @@ public class CommentService {
                 ()-> new IllegalArgumentException("존재하지 않습니다.")
         );
         comment.update(reqDto);
+    }
+
+    @Transactional
+    public void delete(Long id) {
+        Comment comment = commentRepository.findById(id).orElse(null);
+        Post post = postRepository.findById(comment.getPostId()).orElse(null);
+        post.getCommentList().remove(comment);
+        commentRepository.delete(comment);
     }
 }

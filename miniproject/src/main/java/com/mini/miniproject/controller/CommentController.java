@@ -15,6 +15,7 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
+@Controller
 public class CommentController {
 
     private final CommentRepository commentRepository;
@@ -30,19 +31,28 @@ public class CommentController {
 //    }
 
     //댓글 작성
+//    @PostMapping("/api/comment")
+//    public void createReply(@RequestBody CommentDto reqDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
+//        // 로그인 되어 있는 ID
+////        if (userDetails != null) { // LSJ Test하려고 잠깐 주석처리
+////        String userId = userDetails.getUser().getId();
+//        String userId = "tmdwns123";
+//        reqDto.setUserNick(userId);
+//        commentService.createComment(reqDto);
+//            //null나오면 false되도록
+////            if(commentService.createComment(reqDto))
+//
+////        }
+//    }
     @PostMapping("/api/comment")
-    public boolean createReply(@RequestBody CommentDto reqDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
-        // 로그인 되어 있는 ID
-        if (userDetails != null) {
-            String userId = userDetails.getUser().getId();
-            reqDto.setUserNick(userId);
-            commentService.createComment(reqDto);
-            //null나오면 false되도록
-//            if(commentService.createComment(reqDto))
-            return true;
-        }
-        return false;
+    public void addcomment(
+            @RequestBody CommentDto requestDto,
+            @AuthenticationPrincipal UserDetailsImpl userDetails)
+    {
+        requestDto.setUserNick("tmdwns123");
+        commentService.createComment(requestDto);
     }
+
 
     //댓글 조회
     @GetMapping("/api/comment/{id}")
@@ -61,7 +71,7 @@ public class CommentController {
     //댓글 삭제
     @DeleteMapping("/api/comment/{id}")
     public Long deleteReply(@PathVariable Long id) {
-        commentRepository.deleteById(id);
+        commentService.delete(id);
         return id;
     }
 }

@@ -45,6 +45,7 @@ public class PostService {
                 ()-> new IllegalArgumentException("아이디가 존재하지 않습니다.")
         );
         post.update(reqDto);
+        postRepository.save(post);
         return post.getId();
     }
 }

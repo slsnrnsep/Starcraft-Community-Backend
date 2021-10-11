@@ -25,11 +25,18 @@ public class HomeController {
         return "index.html";
     }
     @GetMapping("/dbSet")
-    public void test33()
+    public String test33()
     {
         if (a) {
             a = false;
             setTestDb.dbset();
         }
+        return "index.html";
+    }
+    @GetMapping("/dbSet2")
+    public String test343()
+    {
+        setTestDb.commentSet();
+        return "index.html";
     }
 }
