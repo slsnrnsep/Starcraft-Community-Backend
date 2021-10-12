@@ -33,12 +33,14 @@ public class HomeController {
         System.out.println("왐");
         return "index.html";
     }
+
     @GetMapping("/test")
     public String test2(@AuthenticationPrincipal UserDetailsImpl userDetails)
     {
         System.out.println("왐");
         return "index.html";
     }
+
     @GetMapping("/dbSet")
     public String test33()
     {
@@ -48,6 +50,7 @@ public class HomeController {
         }
         return "index.html";
     }
+
     @GetMapping("/dbSet2")
     public String test343()
     {

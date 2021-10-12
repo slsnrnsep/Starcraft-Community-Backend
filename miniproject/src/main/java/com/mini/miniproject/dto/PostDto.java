@@ -1,4 +1,4 @@
-package com.mini.miniproject.model;
+package com.mini.miniproject.dto;
 
 import lombok.Getter;
 import lombok.Setter;

@@ -1,13 +1,11 @@
 package com.mini.miniproject.service;
 
 import com.mini.miniproject.model.User;
-import com.mini.miniproject.model.UserDto;
+import com.mini.miniproject.dto.UserDto;
 import com.mini.miniproject.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import java.util.regex.Pattern;
 
 @Service
 public class UserService {

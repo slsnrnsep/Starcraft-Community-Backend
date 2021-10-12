@@ -1,5 +1,6 @@
 package com.mini.miniproject.model;
 
+import com.mini.miniproject.dto.CommentDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;

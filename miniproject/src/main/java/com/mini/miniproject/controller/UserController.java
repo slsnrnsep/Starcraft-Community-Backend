@@ -1,9 +1,8 @@
 package com.mini.miniproject.controller;
 
-import com.mini.miniproject.model.UserDto;
+import com.mini.miniproject.dto.UserDto;
 import com.mini.miniproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;

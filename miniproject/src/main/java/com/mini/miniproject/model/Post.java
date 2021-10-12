@@ -1,11 +1,12 @@
 package com.mini.miniproject.model;
 
+import com.mini.miniproject.dto.PostDto;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 @Setter
@@ -35,12 +36,17 @@ public class Post extends Timestamped {
     @OneToMany
     private List<Comment> commentList;
 
+    @OneToMany(mappedBy = "post")
+    private final List<Heart> hearts = new ArrayList<>();
+
+    @Column(columnDefinition = "integer default 0")
+    private int heartCount;
     //file관련 컬럼하나
 
     //제목,내용,카테고리작성자는 따로 userdetails에서
 
 
-    public Post(PostDto reqdto,String username, String content) {
+    public Post(PostDto reqdto, String username, String content) {
         this.userNick = username;
         this.title = reqdto.getTitle();
         this.content = content;
@@ -75,5 +81,16 @@ public class Post extends Timestamped {
     public void addComment(Comment comment) {
         this.commentList.add(comment);
         return;
+    }
+
+
+    public void addHeart(Heart heart) {
+        this.hearts.add(heart);
+        this.heartCount += 1;
+    }
+
+    public void deleteHeart(Heart heart) {
+        this.hearts.remove(heart);
+        this.heartCount -= 1;
     }
 }

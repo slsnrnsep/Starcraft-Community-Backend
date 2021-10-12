@@ -1,7 +1,7 @@
 package com.mini.miniproject.controller;
 
 import com.mini.miniproject.model.Comment;
-import com.mini.miniproject.model.CommentDto;
+import com.mini.miniproject.dto.CommentDto;
 import com.mini.miniproject.repository.CommentRepository;
 import com.mini.miniproject.security.UserDetailsImpl;
 import com.mini.miniproject.service.CommentService;
@@ -10,7 +10,6 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
-import java.security.PublicKey;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -21,14 +20,29 @@ public class CommentController {
     private final CommentRepository commentRepository;
     private final CommentService commentService;
 
-
-//    //로그인 유저 댓글 조회
+    //    //로그인 유저 댓글 조회
 //    @GetMapping("/api/comment")
 //    public List<Comment> getComment(@AuthenticationPrincipal UserDetailsImpl userDetails)
 //    {
 //        Long userId = userDetails.getUser().getId();
 //        return CommentService.getComment(userId);
 //    }
+    //댓글 작성
+//    @PostMapping("/api/comment")
+//    public void createReply(@RequestBody CommentDto reqDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
+//        // 로그인 되어 있는 ID
+////        if (userDetails != null) { // LSJ Test하려고 잠깐 주석처리
+////        String userId = userDetails.getUser().getId();
+//        String userId = "tmdwns123";
+//        reqDto.setUserNick(userId);
+//        commentService.createComment(reqDto);
+//            //null나오면 false되도록
+////            if(commentService.createComment(reqDto))
+//
+////        }
+//    }
+
+
     @PostMapping("/api/comment")
     public void addcomment(
             @RequestBody CommentDto requestDto,
@@ -60,4 +74,6 @@ public class CommentController {
         commentService.delete(id);
         return id;
     }
+
+
 }

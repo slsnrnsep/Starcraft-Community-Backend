@@ -1,7 +1,7 @@
 package com.mini.miniproject.service;
 
 import com.mini.miniproject.model.Post;
-import com.mini.miniproject.model.PostDto;
+import com.mini.miniproject.dto.PostDto;
 import com.mini.miniproject.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

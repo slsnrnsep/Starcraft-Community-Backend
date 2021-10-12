@@ -2,7 +2,7 @@ package com.mini.miniproject.controller;
 
 import com.mini.miniproject.model.FileDto;
 import com.mini.miniproject.model.Post;
-import com.mini.miniproject.model.PostDto;
+import com.mini.miniproject.dto.PostDto;
 import com.mini.miniproject.repository.PostRepository;
 import com.mini.miniproject.security.UserDetailsImpl;
 import com.mini.miniproject.service.FileService;
