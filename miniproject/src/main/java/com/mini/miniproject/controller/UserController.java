@@ -19,9 +19,6 @@ public class UserController {
     @PostMapping("/user/signup") // 회원가입.
     public String registerUser(@RequestBody UserDto requestDto) {
         userService.registerUser(requestDto);
-        //중복된 닉네임일경우 처리해줘야함
-        //false
-
         return "index.html";
     }
 }
