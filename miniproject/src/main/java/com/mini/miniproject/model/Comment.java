@@ -21,12 +21,13 @@ public class Comment {
     @Column(nullable = false)
     private String content;
 
-//    @Column(nullable = false)
-//    private Long postId;
+    @Column(nullable = false)
+    private Long postId;
 
     public Comment(CommentDto reqDto) {
         this.userNick = reqDto.getUserNick();
         this.content = reqDto.getContent();
+        this.postId = reqDto.getPostId();
     }
 
     public Comment(CommentDto reqDto,Long userId,String content)

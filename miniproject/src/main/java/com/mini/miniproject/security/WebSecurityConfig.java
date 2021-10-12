@@ -39,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 //.antMatchers("/user/**").permitAll()
 // 그 외 어떤 요청이든 '인증'
                 .antMatchers("/write.html").authenticated()
-                .antMatchers("/api/comment").authenticated()
+//                .antMatchers("/api/comment").authenticated()
                 .antMatchers("/api/deletecomment/*").authenticated()
                 .antMatchers("/api/editcomment").authenticated()
                 .and()

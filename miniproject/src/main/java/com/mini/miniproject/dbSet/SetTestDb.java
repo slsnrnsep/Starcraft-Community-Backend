@@ -11,6 +11,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.stereotype.Component;
 
+import javax.transaction.Transactional;
+
 @RequiredArgsConstructor
 @Component
 public class SetTestDb {
@@ -20,10 +22,9 @@ public class SetTestDb {
     public void dbset(){
         userSet();
         postSet();
-        commentSet();
     }
 
-
+    @Transactional
     public void userSet()
     {
         UserDto user1 = new UserDto();
@@ -39,7 +40,7 @@ public class SetTestDb {
         user2.setPasswordconfirm("1234");
         userService.registerUser(user2);
     }
-
+    @Transactional
     public void postSet()
     {
         PostDto reqdto = new PostDto();
@@ -88,6 +89,7 @@ public class SetTestDb {
         reqdto11.setTitle("제목9");
         postService.createPosts(reqdto11,"dudgh123");
     }
+    @Transactional
     public void commentSet()
     {
         CommentDto com1 = new CommentDto();
