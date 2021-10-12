@@ -47,14 +47,27 @@
                 }
             })
         }
+        function dolikeorun(id,state)
+        {
+            console.log(id)
+            $.ajax({
+                type: 'POST',
+                url: `/api/post/${id}/like`,
+                contentType: "application/json",
+                data: JSON.stringify({"isLiked" : state}),
+                success: function (response) {
 
+                }
+            })
+        }
         function gethtml(post) {
             // link, image, title, lprice, myprice 변수 활용하기
             return `<tr>
                 <td>${post.userNick}</td>
                 <td>${post.title}</td>
                 <td>${post.createdAt}</td>
-                <button onclick="">좋아요버튼</button>
+                <td onclick = "dolikeorun(${post.id},'false')">좋아요</td>
+                <td onclick = "dolikeorun(${post.id},'true')">싫어요</td>
             </tr>`
         }
         function getonepost(imgpath,title,content) {
@@ -104,6 +117,7 @@
         <th scope="col">제목</th>
         <th scope="col">날짜</th>
         <th scope="col">좋아용</th>
+        <th scope="col">싫어용</th>
     </tr>
     </thead>
     <tbody id="post-box">
