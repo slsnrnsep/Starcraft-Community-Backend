@@ -1,14 +1,12 @@
 package com.mini.miniproject.dbSet;
 
-import com.mini.miniproject.model.CommentDto;
-import com.mini.miniproject.model.Post;
-import com.mini.miniproject.model.PostDto;
-import com.mini.miniproject.model.UserDto;
+import com.mini.miniproject.dto.CommentDto;
+import com.mini.miniproject.dto.PostDto;
+import com.mini.miniproject.dto.UserDto;
 import com.mini.miniproject.service.CommentService;
 import com.mini.miniproject.service.PostService;
 import com.mini.miniproject.service.UserService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.ApplicationArguments;
 import org.springframework.stereotype.Component;
 
 import javax.transaction.Transactional;

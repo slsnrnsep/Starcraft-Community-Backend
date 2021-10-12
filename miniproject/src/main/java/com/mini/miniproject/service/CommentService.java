@@ -1,7 +1,7 @@
 package com.mini.miniproject.service;
 
 import com.mini.miniproject.model.Comment;
-import com.mini.miniproject.model.CommentDto;
+import com.mini.miniproject.dto.CommentDto;
 import com.mini.miniproject.model.Post;
 import com.mini.miniproject.repository.CommentRepository;
 import com.mini.miniproject.repository.PostRepository;
