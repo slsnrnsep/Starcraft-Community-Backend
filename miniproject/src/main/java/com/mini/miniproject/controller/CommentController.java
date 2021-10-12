@@ -27,7 +27,6 @@ public class CommentController {
 //        Long userId = userDetails.getUser().getId();
 //        return CommentService.getComment(userId);
 //    }
-
     //댓글 작성
 //    @PostMapping("/api/comment")
 //    public void createReply(@RequestBody CommentDto reqDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
@@ -43,11 +42,13 @@ public class CommentController {
 ////        }
 //    }
 
+
     @PostMapping("/api/comment")
     public void addcomment(
             @RequestBody CommentDto requestDto,
             @AuthenticationPrincipal UserDetailsImpl userDetails)
     {
+        //if (userDetails != null) 이구문 차후에 추가해줘야함
         requestDto.setUserNick("tmdwns123");
         commentService.createComment(requestDto);
     }

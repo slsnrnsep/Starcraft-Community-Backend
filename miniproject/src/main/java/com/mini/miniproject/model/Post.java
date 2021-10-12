@@ -30,6 +30,9 @@ public class Post extends Timestamped {
     @Column(nullable = false) // 테란 : 0 저그 : 1 프로토스 2
     private Long categori;
 
+    @Column(nullable = false) // 테란 : 0 저그 : 1 프로토스 2
+    private String filePath;
+
     @OneToMany
     private List<Comment> commentList;
 
@@ -55,6 +58,7 @@ public class Post extends Timestamped {
         this.title = reqdto.getTitle();
         this.content = reqdto.getContent();
         this.categori = reqdto.getCategori();
+        this.filePath = reqdto.getFilePath();
     }
 
     public Post(String title,String userNick,String content) {

@@ -25,6 +25,7 @@ public class CommentService {
     }
 
     //댓글 작성 서비스
+    @Transactional
     public Comment createComment(CommentDto reqDto) {
         String CommentCheck = reqDto.getContent();
         if(CommentCheck.contains("script")||CommentCheck.contains("<")||CommentCheck.contains(">"))
