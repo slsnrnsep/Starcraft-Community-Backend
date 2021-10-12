@@ -20,6 +20,8 @@ public class HeartController {
 
     @PostMapping("/api/post/{id}/like")
     public String likePost(@PathVariable Long id, @RequestBody HeartRequestDto requestDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
+        //id postid
+        //isliked 좋아요상태
         boolean liked = heartService.liked(id, requestDto, userDetails);
         if(liked){
             return "true";
