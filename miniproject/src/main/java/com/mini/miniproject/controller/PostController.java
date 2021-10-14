@@ -25,6 +25,7 @@ public class PostController {
     private final FileService fileService;
     private String commonPath = "\\src\\main\\resources\\static\\images";
     //게시글 작성
+    @CrossOrigin(origins = "http://localhost:9999")
     @PostMapping("/api/post")
     public Post createPosts (
             @RequestParam("file") MultipartFile files,
@@ -49,6 +50,7 @@ public class PostController {
                 }
                 String filePath = savePath + "\\" + filename;
                 files.transferTo(new File(filePath));
+                System.out.println(filePath);
             }
 //            FileDto fileDto = new FileDto();
 //            fileDto.setOrigFilename(origFilename);
@@ -66,13 +68,15 @@ public class PostController {
     }
 
     //게시글 전체 조회
+    @CrossOrigin(origins = "http://localhost:9999")
     @GetMapping("/api/post")
     public List<Post> getPosts()
     {
       return postRepository.findAllByOrderByCreatedAtDesc();
     }
 
-    //게시글 상세 조회
+    //게시글 상세
+    @CrossOrigin(origins = "http://localhost:9999")
     @GetMapping("/api/post/{id}")
     public Post getPosts(@PathVariable Long id){
         Post post = postRepository.findById(id).orElseThrow(
@@ -81,6 +85,7 @@ public class PostController {
     }
 
     //게시글 카테고리별 조회
+    @CrossOrigin(origins = "http://localhost:9999")
     @GetMapping("/api/post/categori/{categori}")
     public List<Post> getCategoriPosts(@PathVariable Long categori)
     {
@@ -89,6 +94,7 @@ public class PostController {
     }
 
     //게시글 수정
+    @CrossOrigin(origins = "http://localhost:9999")
     @PutMapping("/api/post/{id}")
     public Long updatePosts(@PathVariable Long id,@RequestBody PostDto reqDto)
     {
@@ -97,6 +103,7 @@ public class PostController {
     }
 
     //게시글 삭제
+    @CrossOrigin(origins = "http://localhost:9999")
     @DeleteMapping("/api/post/{id}")
     public Long deletePosts(@PathVariable Long id)
     {

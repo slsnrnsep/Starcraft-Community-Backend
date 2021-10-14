@@ -42,7 +42,7 @@ public class CommentController {
 ////        }
 //    }
 
-
+    @CrossOrigin(origins = "http://localhost:9999")
     @PostMapping("/api/comment")
     public void addcomment(
             @RequestBody CommentDto requestDto,
@@ -55,6 +55,7 @@ public class CommentController {
 
 
     //댓글 조회
+    @CrossOrigin(origins = "http://localhost:9999")
     @GetMapping("/api/comment/{id}")
     public List<Comment> getComment(@PathVariable Long postId)
     {
@@ -62,6 +63,7 @@ public class CommentController {
     }
 
     //댓글 수정
+    @CrossOrigin(origins = "http://localhost:9999")
     @PutMapping("/api/comment/{id}")
     public Long updateReply(@PathVariable Long id, @RequestBody CommentDto reqDto) {
         commentService.update(id, reqDto);
@@ -69,6 +71,7 @@ public class CommentController {
     }
 
     //댓글 삭제
+    @CrossOrigin(origins = "http://localhost:9999")
     @DeleteMapping("/api/comment/{id}")
     public Long deleteReply(@PathVariable Long id) {
         commentService.delete(id);

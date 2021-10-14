@@ -7,10 +7,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -18,6 +15,7 @@ public class HeartController {
 
     private final HeartService heartService;
 
+    @CrossOrigin(origins = "http://localhost:9999")
     @PostMapping("/api/post/{id}/like")
     public String likePost(@PathVariable Long id, @RequestBody HeartRequestDto requestDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
         //id postid

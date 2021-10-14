@@ -21,13 +21,13 @@ public class PostService {
         String titleCheck = requestDto.getTitle();
 
         if (contentsCheck.contains("script")||contentsCheck.contains("<")||contentsCheck.contains(">")){
-            Post post = new Post(requestDto,username,"xss 안돼요,,하지마세요ㅠㅠ");
+            Post post = new Post(requestDto,username,"xss no");
             postRepository.save(post);
             return post;
         }
 
         if (titleCheck.contains("script")||titleCheck.contains("<")||titleCheck.contains(">")) {
-            Post post= new Post("xss 안돼요,,하지마세요ㅠㅠ", username, "xss 안돼요,,하지마세요ㅠㅠ");
+            Post post= new Post("xss no", username, "xss 안돼요,,하지마세요ㅠㅠ");
             postRepository.save(post);
             return post;
         }
