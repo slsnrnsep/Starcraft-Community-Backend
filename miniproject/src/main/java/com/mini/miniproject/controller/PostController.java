@@ -23,7 +23,8 @@ public class PostController {
     private final PostRepository postRepository;
     private final PostService postService;
     private final FileService fileService;
-    private String commonPath = "\\src\\main\\resources\\static\\images";
+    private String commonPath = "/images"; // 이경로는 우분투랑 윈도우랑 다르니까 주의해야댐 우분투 : "/"
+                                            // 윈도우  : \\ 인것같음.
     //게시글 작성
     @CrossOrigin(origins = "http://localhost:9999")
     @PostMapping("/api/post")
@@ -48,7 +49,7 @@ public class PostController {
                         e.getStackTrace();
                     }
                 }
-                String filePath = savePath + "\\" + filename;
+                String filePath = savePath + "/" + filename;// 이경로는 우분투랑 윈도우랑 다르니까 주의해야댐 우분투 : / 윈도우 \\ 인것같음.
                 files.transferTo(new File(filePath));
                 System.out.println(filePath);
             }
@@ -58,7 +59,7 @@ public class PostController {
 //            fileDto.setFilePath(filePath);
 //            Long fileId = fileService.saveFile(fileDto);
             String username = "tmdwns123";
-            reqdto.setFilePath("/images/"+filename);
+            reqdto.setFilePath(filename);
             Post posts = postService.createPosts(reqdto,username);
             return null;
         }
