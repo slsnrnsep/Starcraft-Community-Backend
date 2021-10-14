@@ -11,6 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -84,11 +85,12 @@ public class HomeController {
 //
 //    }
 
+
+    @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/display/{file}")
     public ResponseEntity<org.springframework.core.io.Resource> display(
             @PathVariable String file
     ) {
-
         String path = System.getProperty("user.dir")+"/images/"+file; // 이경로는 우분투랑 윈도우랑 다르니까 주의해야댐 우분투 : / 윈도우 \\ 인것같음.
         String folder = "";
         org.springframework.core.io.Resource resource = new FileSystemResource(path);

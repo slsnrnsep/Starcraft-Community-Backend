@@ -17,10 +17,13 @@ public class UserController {
         this.userService = userService;
     }
 
-    @CrossOrigin(origins = "http://localhost:9999")
+    @CrossOrigin(origins = "http://localhost:8080")
     @PostMapping("/user/signup") // 회원가입.
     public String registerUser(@RequestBody UserDto requestDto) {
         userService.registerUser(requestDto);
         return "index.html";
     }
+
+//    @PostMapping("/user/login")
+//    public
 }

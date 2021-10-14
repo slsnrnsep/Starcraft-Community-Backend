@@ -1,7 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1e4e30ff-306d-43fe-a9b7-e69cf13f2db2" name="변경" comment="변경" />
+    <list default="true" id="1e4e30ff-306d-43fe-a9b7-e69cf13f2db2" name="변경" comment="변경">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/controller/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/controller/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/controller/HeartController.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/controller/HeartController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/controller/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/controller/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/controller/PostController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/security/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/security/UserDetailsServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/security/WebMvcConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/security/WebMvcConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/security/WebSecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/security/WebSecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/src/main/java/com/mini/miniproject/service/PostService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/miniproject/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/miniproject/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +43,8 @@
       <updated>1633921479385</updated>
       <workItem from="1633921480724" duration="193000" />
       <workItem from="1633923076784" duration="111000" />
+      <workItem from="1634189415569" duration="1851000" />
+      <workItem from="1634200869195" duration="600000" />
     </task>
     <servers />
   </component>

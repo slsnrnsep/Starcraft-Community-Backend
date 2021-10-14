@@ -33,8 +33,10 @@ public class PostService {
         }
 
         // 요청받은 DTO 로 DB에 저장할 객체 만들기
+        System.out.println("서비스 36번쨰 줄");
         Post post = new Post(requestDto, username);
         postRepository.save(post);
+        System.out.println("서비스 39번쨰 줄");
         return post;
     }
 
