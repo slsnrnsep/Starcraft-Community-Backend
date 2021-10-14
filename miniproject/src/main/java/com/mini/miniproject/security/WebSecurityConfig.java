@@ -71,12 +71,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .and()
 //// [로그인 기능]
                 .formLogin()
+
 // 로그인 View 제공 (GET /user/login)
-                .loginPage("/user/login?gologin")
+                .loginPage("/user/login")
 // 로그인 처리 (POST /user/login)
                 .loginProcessingUrl("/user/login")
 // 로그인 처리 후 성공 시 URL
-                .defaultSuccessUrl("/")
+                .defaultSuccessUrl("http://localhost:8080/")
 // 로그인 처리 후 실패 시 URL
                 .failureUrl("/user/login?error")
                 .permitAll()

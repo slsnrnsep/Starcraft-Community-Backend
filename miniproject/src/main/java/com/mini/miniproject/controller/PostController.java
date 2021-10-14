@@ -76,9 +76,13 @@ public class PostController {
     //게시글 전체 조회
     @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/api/post")
-    public List<Post> getPosts()
+    public List<Post> getPosts(
+            @AuthenticationPrincipal UserDetailsImpl userDetails
+    )
     {
-      return postRepository.findAllByOrderByCreatedAtDesc();
+        if(userDetails != null)
+            System.out.println(userDetails.getUser().getId());
+        return postRepository.findAllByOrderByCreatedAtDesc();
     }
 
     //게시글 상세
