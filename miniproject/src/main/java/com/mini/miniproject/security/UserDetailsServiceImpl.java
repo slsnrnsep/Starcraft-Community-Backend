@@ -25,7 +25,6 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("Can't find " + username));
 
         System.out.println(user);
-
         return new UserDetailsImpl(user);
     }
 }

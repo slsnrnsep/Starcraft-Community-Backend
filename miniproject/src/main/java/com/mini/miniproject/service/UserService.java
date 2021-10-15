@@ -42,6 +42,11 @@ public class UserService {
             //중복된거 있다고 알람창띄우가
         }
     }
+    public User find(String id)
+    {
+        User user = userRepository.findById(id).orElse(null);
+        return user;
+    }
 
     private boolean check(String userId, String password, String passwordConfirm, String userNick) {
         return true;
