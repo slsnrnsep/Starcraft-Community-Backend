@@ -84,7 +84,7 @@ public class HomeController {
 //    }
 
 
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/display/{file}")
     public ResponseEntity<org.springframework.core.io.Resource> display(
             @PathVariable String file

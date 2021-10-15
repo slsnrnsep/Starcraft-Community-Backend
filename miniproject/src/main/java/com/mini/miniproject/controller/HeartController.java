@@ -15,7 +15,7 @@ public class HeartController {
 
     private final HeartService heartService;
 
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/api/post/{id}/like")
     public String likePost(@PathVariable Long id, @RequestBody HeartRequestDto requestDto, @AuthenticationPrincipal UserDetailsImpl userDetails) {
         //id postid

@@ -23,14 +23,14 @@ public class UserController {
         this.userService = userService;
     }
 
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/user/signup") // 회원가입.
     public String registerUser(@RequestBody UserDto requestDto) {
         userService.registerUser(requestDto);
         return "index.html";
     }
 
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/api/checklogin")
     public Boolean getComment(@AuthenticationPrincipal UserDetailsImpl userDetails)
     {
@@ -38,13 +38,13 @@ public class UserController {
             return true;
         return false;
     }
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/loginfail") // login fail
     public Boolean loginfail()
     {
         return false;
     }
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/loginsuccess/{username}") // login suc
     public UserDto loginsuccess(@PathVariable String username)
     {

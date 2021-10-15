@@ -25,7 +25,7 @@ public class PostController {
     private String commonPath = "/images"; // 이경로는 우분투랑 윈도우랑 다르니까 주의해야댐 우분투 : "/"
                                             // 윈도우  : \\ 인것같음.
     //게시글 작성
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://localhost:3000")
     @PostMapping("/api/post")
     public Post createPosts (
             @RequestParam(value = "file",required = false) MultipartFile files,
@@ -79,7 +79,7 @@ public class PostController {
         }
     }
     //게시글 전체 조회
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/api/post")
     public List<Post> getPosts(
             @AuthenticationPrincipal UserDetailsImpl userDetails
@@ -92,7 +92,7 @@ public class PostController {
     }
 
     //게시글 상세
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/api/post/{id}")
     public Post getPosts(@PathVariable Long id){
         Post post = postRepository.findById(id).orElseThrow(
@@ -101,7 +101,7 @@ public class PostController {
     }
 
     //게시글 카테고리별 조회
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/api/post/categori/{categori}")
     public List<Post> getCategoriPosts(@PathVariable Long categori)
     {
@@ -110,7 +110,7 @@ public class PostController {
     }
 
     //게시글 수정
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://localhost:3000")
     @PutMapping("/api/post/{id}")
     public Long updatePosts(@PathVariable Long id,@RequestBody(required = false) PostDto reqDto)
     {
@@ -119,7 +119,7 @@ public class PostController {
     }
 
     //게시글 삭제
-    @CrossOrigin(origins = "http://localhost:8080")
+    @CrossOrigin(origins = "http://localhost:3000")
     @DeleteMapping("/api/post/{id}")
     public Long deletePosts(@PathVariable Long id)
     {
