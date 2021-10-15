@@ -1,4 +1,5 @@
 package com.mini.miniproject.security;
+import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
@@ -17,7 +18,10 @@ import java.lang.reflect.Method;
 @Configuration
 @EnableWebSecurity // 스프링 Security 지원을 가능하게 함
 @EnableGlobalMethodSecurity(securedEnabled = true) // @Secured 어노테이션 활성화
+@AllArgsConstructor
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
+    private UserLoginFailHandler userLoginFailHandler;
+    private LoginSuccessHandler loginSuccessHandler;
 
     @Bean
     public BCryptPasswordEncoder encodePassword() {
@@ -54,6 +58,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .anyRequest().authenticated()
 //                .and()
                 .antMatchers(HttpMethod.OPTIONS,"/**").permitAll()
+                .antMatchers("/user/login").permitAll()
 
                 .and()
                 .cors()
@@ -72,16 +77,17 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 //                .and()
 //// [로그인 기능]
                 .formLogin()
+                .failureHandler(userLoginFailHandler)
 
 // 로그인 View 제공 (GET /user/login)
-                .loginPage("/user/login")
+//                .loginPage("/user/login")
 // 로그인 처리 (POST /user/login)
                 .loginProcessingUrl("/user/login")
 // 로그인 처리 후 성공 시 URL
                 .defaultSuccessUrl("http://localhost:3000/")
 // 로그인 처리 후 실패 시 URL
-                .failureUrl("/user/login?error")
                 .permitAll()
+                .successHandler(loginSuccessHandler)
                 .and()
 // [로그아웃 기능]
                 .logout()
