@@ -42,7 +42,7 @@ public class CommentController {
 ////        }
 //    }
 
-    @CrossOrigin(origins = "http://localhost:8080")
+    //@CrossOrigin(origins = "http://localhost:8080")
     @PostMapping("/api/comment")
     public void addcomment(
             @RequestBody CommentDto requestDto,

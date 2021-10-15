@@ -72,6 +72,15 @@ public class PostController {
             return null;
         }
     }
+    @CrossOrigin(origins = "http://localhost:8080") // Test 시그냥해보셈
+    @PostMapping("/lsjtest1")
+    public String abc (
+            @RequestParam(value = "username",required = false) String username,
+            @RequestParam(value = "password",required = false) String pw,
+            @AuthenticationPrincipal UserDetailsImpl userDetails)
+    {
+        return "zz";
+    }
 
     //게시글 전체 조회
     @CrossOrigin(origins = "http://localhost:8080")
@@ -82,6 +91,7 @@ public class PostController {
     {
         if(userDetails != null)
             System.out.println(userDetails.getUser().getId());
+
         return postRepository.findAllByOrderByCreatedAtDesc();
     }
 
