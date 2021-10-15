@@ -34,13 +34,12 @@ public class PostController {
     {
         System.out.println(files);
         try {
-            System.out.println("36번쨰 줄");
             String filename = "basic.jpg";
             if(files != null) {
                 String origFilename = files.getOriginalFilename();
                 filename = new MD5Generator(origFilename).toString() + ".jpg";
                 /* 실행되는 위치의 'files' 폴더에 파일이 저장됩니다. */
-                System.out.println("42번쨰 줄");
+
                 String savePath = System.getProperty("user.dir") + commonPath;
                 /* 파일이 저장되는 폴더가 없으면 폴더를 생성합니다. */
                 //files.part.getcontententtype() 해서 이미지가 아니면 false처리해야함.
@@ -51,19 +50,26 @@ public class PostController {
                         e.getStackTrace();
                     }
                 }
-                System.out.println("53번쨰 줄");
                 String filePath = savePath + "/" + filename;// 이경로는 우분투랑 윈도우랑 다르니까 주의해야댐 우분투 : / 윈도우 \\ 인것같음.
                 files.transferTo(new File(filePath));
-                System.out.println("56번쨰 줄");
+
             }
 //            FileDto fileDto = new FileDto();
 //            fileDto.setOrigFilename(origFilename);
 //            fileDto.setFilename(filename);
 //            fileDto.setFilePath(filePath);
 //            Long fileId = fileService.saveFile(fileDto);
-            String username = "tmdwns123";
+            String username = "nulltest";
+            if(userDetails != null){
+                username = userDetails.getUser().getUserNick();
+                System.out.println(userDetails);
+                System.out.println(userDetails.getUser());
+                System.out.println(userDetails.getUser().getUserNick());
+                System.out.println(userDetails.getUser().getId());
+            }
+
+            System.out.println(username);
             reqdto.setFilePath(filename);
-            System.out.println("65번쨰 줄");
 
             Post posts = postService.createPosts(reqdto,username);
             return null;
@@ -72,16 +78,6 @@ public class PostController {
             return null;
         }
     }
-    @CrossOrigin(origins = "http://localhost:8080") // Test 시그냥해보셈
-    @PostMapping("/lsjtest1")
-    public String abc (
-            @RequestParam(value = "username",required = false) String username,
-            @RequestParam(value = "password",required = false) String pw,
-            @AuthenticationPrincipal UserDetailsImpl userDetails)
-    {
-        return "zz";
-    }
-
     //게시글 전체 조회
     @CrossOrigin(origins = "http://localhost:8080")
     @GetMapping("/api/post")
@@ -116,7 +112,7 @@ public class PostController {
     //게시글 수정
     @CrossOrigin(origins = "http://localhost:8080")
     @PutMapping("/api/post/{id}")
-    public Long updatePosts(@PathVariable Long id,@RequestBody PostDto reqDto)
+    public Long updatePosts(@PathVariable Long id,@RequestBody(required = false) PostDto reqDto)
     {
         postService.update(id,reqDto);
         return id;
@@ -128,6 +124,9 @@ public class PostController {
     public Long deletePosts(@PathVariable Long id)
     {
         //삭제할때 댓글들 자동으로삭제하는지 확인해야함..
+
+        //삭제할때 같이 저장된 이미지 경로 및 파일도 삭제
+
         postRepository.deleteById(id);
         return id;
     }

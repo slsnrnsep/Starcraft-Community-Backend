@@ -32,14 +32,12 @@ public class HomeController {
     @GetMapping("/")
     public String test()
     {
-        System.out.println("왐");
         return "index.html";
     }
 
     @GetMapping("/test")
     public String test2(@AuthenticationPrincipal UserDetailsImpl userDetails)
     {
-        System.out.println("왐");
         return "index.html";
     }
 

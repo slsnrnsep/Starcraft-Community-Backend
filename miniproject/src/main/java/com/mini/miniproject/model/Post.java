@@ -74,7 +74,6 @@ public class Post extends Timestamped {
     }
     public void update(PostDto reqDto) {
         this.title = reqDto.getTitle();
-        this.userNick = reqDto.getUserNick();
         this.content = reqDto.getContent();
         this.categori = reqDto.getCategori();
     }
