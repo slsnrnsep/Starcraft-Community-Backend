@@ -41,15 +41,15 @@
 
 - 회원가입
 
-![회원가입1](https://www.notion.so/4-18-6642cb83a36c4b5e9ca650086a282c11#293acdbf37474e748ac0e500cbfaf247)
+![회원가입1](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/9c892a8e-3133-482f-a656-69f54d4004da/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211016%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211016T054032Z&X-Amz-Expires=86400&X-Amz-Signature=d564efe6d2fc6d88600cd18e4d02105449546bcfb0540bc19cad99bfe700f7aa&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
 2. 로그인
 
-![로그인](https://www.notion.so/4-18-6642cb83a36c4b5e9ca650086a282c11#4ae7747aed9e4d19b401672f413aea39)
+![로그인](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/e3afe4e3-f4ee-47f2-98e7-f7c9655aa334/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211016%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211016T054041Z&X-Amz-Expires=86400&X-Amz-Signature=2a13daff79b62a21127bb69f85147bcfef85c709f651e9232514d2322d70a083&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
 3. 메인페이지
 
-![메인페이지](https://www.notion.so/4-18-6642cb83a36c4b5e9ca650086a282c11#e12e2004dda2448aacf1cb55c90ffcd7)
+![메인페이지](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/6935fafd-f3b1-44a3-bf0f-d3689f98ab79/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211016%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211016T054021Z&X-Amz-Expires=86400&X-Amz-Signature=ff7158d572acc7e5786e13bd4ace41d6ebab230a05d8958411fd462d578dfae2&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
 4. 상세 페이지
 
@@ -57,7 +57,7 @@
 
 5. 게시글 작성
 
-![게시글 작성 페이지](https://www.notion.so/4-18-6642cb83a36c4b5e9ca650086a282c11#58db2dc57ae246f6b7a7427d2750d3d9)
+![게시글 작성 페이지](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/247b60df-d624-498c-85f9-24524f5d78ba/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211016%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211016T054056Z&X-Amz-Expires=86400&X-Amz-Signature=360e673369b9ffd579bd599a6c8e9c48abd2a162d43ab2d3f71840ce870f7b35&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
 #### 5. API 설계
 https://www.notion.so/744bb1a68c824eaab96598027d47b487?v=c4b03910f33443929cfc305d4c65cb77
