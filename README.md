@@ -9,10 +9,10 @@
   - [프로젝트 목표](#3-프로젝트-)
   - [와이어프레임 설계](#4-와이어프레임-설계(Figma-활용))
   - [API 설계](#5-API-설계)
-  - [DB 설계](#6-DB-설계)
 - [개발 결과](#개발-결과)
   - [구현한 기능](#1구현한-기능)
-  - [피드백](#2-회고-및-피드백)
+  - [실제 서비스 모습](#2-실제-서비스-모습)
+  - [피드백](#3-회고-및-피드백)
 ---
 ### 개발 배경
 - 오픈된 공간에서 유저 서로가 스타크래프트라는 게임의 정보를 공유하는 공간입니다!
@@ -63,12 +63,7 @@
 ![게시글 작성 페이지](https://user-images.githubusercontent.com/85334989/128336550-ab747d6a-5244-4027-aa32-aa8a39805f4e.png)
 
 #### 5. API 설계
-- Swagger 2.0을 이용하여 API를 관리하였습니다.
-![API 설계](https://user-images.githubusercontent.com/85334989/128338423-100f420c-d2c2-4cfc-ba00-b37bea8eb9d6.png)
-
-#### 6. DB 설계
-![image](https://user-images.githubusercontent.com/85334989/128343753-30e5633e-bb42-4cf9-a363-e8756fb2f146.png)
-
+![API 설계]https://www.notion.so/744bb1a68c824eaab96598027d47b487?v=c4b03910f33443929cfc305d4c65cb77
 
 ---
 ### 개발 결과
@@ -113,8 +108,11 @@ public class WebConfig implements WebMvcConfigurer {
 public String resolveToken(HttpServletRequest request) {
      return request.getHeader("X-AUTH-TOKEN");
  }
- 
-#### 2. 회고 및 피드백
+```
+
+#### 2. 실제 서비스 모습
+[시연 영상 YouTube 이동](https://www.youtube.com/watch?v=NF_MD1WTnFI&t=53s)
+#### 3. 회고 및 피드백
 백엔드, 프론트엔드로 분리된 개발환경에서 각자 개발을 하고, 이를 한 개의 결과물로 만드는 과정에서 나타나는 문제(CORS, JWT인증)를 겪고 이를 해결해보는 좋은 경험이었습니다.
 주특기를 선택하고 공부하기 이전에 프로젝트를 진행할 때에는 프론트엔드, 백엔드 구분 없이 모두가 동일한 Repository의 동일한 file을 갖고 기능단위로 역할을 맡아 개발을 했었습니다.
 최초에 그렸던 와이어프레임과 완전히 동일하게(view)는 구현하지 못했지만, 기능적으로는 90% 이상 달성한 뿌듯한 프로젝트입니다.
