@@ -38,32 +38,29 @@
 
 
 #### 4. 와이어프레임 설계(Figma 활용)
-[Figma 설계 보러가기](https://www.figma.com/file/oZF7U6mjOvXaIq3nfeeKKf/%ED%95%AD%ED%95%B499-%EB%AF%B8%EB%8B%88%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-24%EC%A1%B0?node-id=0%3A1)
 
 - 회원가입
 
-![회원가입1](https://user-images.githubusercontent.com/85334989/128336199-996a5d6c-6e70-4e7a-8848-2b622d8f52f4.png)
-![회원가입2](https://user-images.githubusercontent.com/85334989/128336294-725691be-8ff4-40e8-a505-3a63f1ddd1fb.png)
-
+![회원가입1](https://www.notion.so/4-18-6642cb83a36c4b5e9ca650086a282c11#293acdbf37474e748ac0e500cbfaf247)
 
 2. 로그인
 
-![로그인](https://user-images.githubusercontent.com/85334989/128336344-2b783a07-e22f-48f8-823a-488808dbceff.png)
+![로그인](https://www.notion.so/4-18-6642cb83a36c4b5e9ca650086a282c11#4ae7747aed9e4d19b401672f413aea39)
 
 3. 메인페이지
 
-![메인페이지](https://user-images.githubusercontent.com/85334989/128336417-12e97821-06d1-4a1d-8a6c-2ab194008070.png)
+![메인페이지](https://www.notion.so/4-18-6642cb83a36c4b5e9ca650086a282c11#e12e2004dda2448aacf1cb55c90ffcd7)
 
 4. 상세 페이지
 
-![상세 페이지](https://user-images.githubusercontent.com/85334989/128336485-dccccaa6-038a-48ac-8755-161eec7a2638.png)
+![상세 페이지](https://www.notion.so/4-18-6642cb83a36c4b5e9ca650086a282c11#f2089a19bc354495996ee429bfd1e3e8)
 
-5. 게시글 작성&수정 페이지
+5. 게시글 작성
 
-![게시글 작성 페이지](https://user-images.githubusercontent.com/85334989/128336550-ab747d6a-5244-4027-aa32-aa8a39805f4e.png)
+![게시글 작성 페이지](https://www.notion.so/4-18-6642cb83a36c4b5e9ca650086a282c11#58db2dc57ae246f6b7a7427d2750d3d9)
 
 #### 5. API 설계
-![API 설계]https://www.notion.so/744bb1a68c824eaab96598027d47b487?v=c4b03910f33443929cfc305d4c65cb77
+https://www.notion.so/744bb1a68c824eaab96598027d47b487?v=c4b03910f33443929cfc305d4c65cb77
 
 ---
 ### 개발 결과
