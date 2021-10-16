@@ -53,7 +53,7 @@
 
 4. 상세 페이지
 
-![상세 페이지](https://www.notion.so/4-18-6642cb83a36c4b5e9ca650086a282c11#f2089a19bc354495996ee429bfd1e3e8)
+![상세 페이지](https://s3.us-west-2.amazonaws.com/secure.notion-static.com/23168c02-b0c2-448b-9b29-f8314713d3bc/Untitled.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAT73L2G45O3KS52Y5%2F20211016%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20211016T053946Z&X-Amz-Expires=86400&X-Amz-Signature=ec6b6705ee8326c4ff9d47116d4afeeced50ba2eb7bb71ad44c3f2137c82cd27&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22Untitled.png%22)
 
 5. 게시글 작성
 
@@ -108,10 +108,11 @@ public String resolveToken(HttpServletRequest request) {
 ```
 
 #### 2. 실제 서비스 모습
-[시연 영상 YouTube 이동](https://www.youtube.com/watch?v=NF_MD1WTnFI&t=53s)
+[시연 영상 YouTube 이동](https://www.youtube.com/)
+
 #### 3. 회고 및 피드백
-백엔드, 프론트엔드로 분리된 개발환경에서 각자 개발을 하고, 이를 한 개의 결과물로 만드는 과정에서 나타나는 문제(CORS, JWT인증)를 겪고 이를 해결해보는 좋은 경험이었습니다.
-주특기를 선택하고 공부하기 이전에 프로젝트를 진행할 때에는 프론트엔드, 백엔드 구분 없이 모두가 동일한 Repository의 동일한 file을 갖고 기능단위로 역할을 맡아 개발을 했었습니다.
-최초에 그렸던 와이어프레임과 완전히 동일하게(view)는 구현하지 못했지만, 기능적으로는 90% 이상 달성한 뿌듯한 프로젝트입니다.
-Spring 공부를 시작하고 혼자 프로젝트를 진행할 때에는 썩 예쁜 페이지를 만들지 못했지만, 프론트엔드 개발자들과 협업하면서 온전히 백엔드 개발에만 몰입할 수 있었고, 보기에도 예쁜 페이지를 만들 수 있었습니다.
-이번 프로젝트에서는 좋아요, 프로필사진의 소셜 기능을 담지 못했지만, 추후 더욱 연구해서 꼭 적용해보고 싶다는 생각을 했습니다.
+- 백엔드, 프론트엔드로 분리된 개발환경에서 각자 개발을 하고, 이를 한 개의 결과물로 만드는 과정에서 나타나는 문제(CORS, JWT인증)를 겪고 이를 해결해보는 좋은 경험이었습니다.
+- 스프링 선택하고 공부하기 이전에 프로젝트를 진행할 때에는 프론트엔드, 백엔드 구분 없이 모두가 동일한 Repository의 동일한 file을 갖고 기능단위로 역할을 맡아 개발을 했었습니다.
+-최초에 그렸던 와이어프레임과 완전히 동일하게(view)는 구현하지 못했지만, 기능적으로는 90% 이상 달성한 뿌듯한 프로젝트입니다.
+-Spring 공부를 시작하고 혼자 프로젝트를 진행할 때에는 썩 예쁜 페이지를 만들지 못했지만, 프론트엔드 개발자들과 협업하면서 온전히 백엔드 개발에만 몰입할 수 있었고, 보기에도 예쁜 페이지를 만들 수 있었습니다.
+-이번 프로젝트에서는 좋아요, 프로필사진의 소셜 기능을 담지 못했지만, 추후 더욱 연구해서 꼭 적용해보고 싶다는 생각을 했습니다.
