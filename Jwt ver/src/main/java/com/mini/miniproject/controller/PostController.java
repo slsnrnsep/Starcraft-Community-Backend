@@ -3,6 +3,7 @@ package com.mini.miniproject.controller;
 import com.mini.miniproject.model.Post;
 import com.mini.miniproject.dto.PostDto;
 import com.mini.miniproject.repository.PostRepository;
+import com.mini.miniproject.repository.UserRepository;
 import com.mini.miniproject.security.UserDetailsImpl;
 import com.mini.miniproject.service.FileService;
 import com.mini.miniproject.service.PostService;
@@ -22,6 +23,8 @@ public class PostController {
     private final PostRepository postRepository;
     private final PostService postService;
     private final FileService fileService;
+    private final UserRepository userRepository;
+
     private String commonPath = "/images"; // 이경로는 우분투랑 윈도우랑 다르니까 주의해야댐 우분투 : "/"
                                             // 윈도우  : \\ 인것같음.
     //게시글 작성
@@ -81,12 +84,10 @@ public class PostController {
     //게시글 전체 조회
     @CrossOrigin(origins = "http://localhost:3000")
     @GetMapping("/api/post")
-    public List<Post> getPosts(
-            @AuthenticationPrincipal UserDetailsImpl userDetails
-    )
+    public List<Post> getPosts()
     {
-        if(userDetails != null)
-            System.out.println(userDetails.getUser().getId());
+//        if(userDetails != null)
+//            System.out.println(userDetails.getUser().getId());
 
         return postRepository.findAllByOrderByCreatedAtDesc();
     }

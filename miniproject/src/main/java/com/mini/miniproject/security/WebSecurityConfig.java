@@ -84,7 +84,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 // 로그인 처리 (POST /user/login)
                 .loginProcessingUrl("/user/login")
 // 로그인 처리 후 성공 시 URL
-                .defaultSuccessUrl("http://localhost:3000/")
+                .defaultSuccessUrl("http://52.79.248.107:3000/")
 // 로그인 처리 후 실패 시 URL
                 .permitAll()
                 .successHandler(loginSuccessHandler)
