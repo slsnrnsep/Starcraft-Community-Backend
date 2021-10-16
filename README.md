@@ -12,19 +12,18 @@
   - [DB 설계](#6-DB-설계)
 - [개발 결과](#개발-결과)
   - [구현한 기능](#1구현한-기능)
-  - [실제 서비스 모습](#2-실제-서비스-모습)
-  - [피드백](#3-회고-및-피드백)
+  - [피드백](#2-회고-및-피드백)
 ---
 ### 개발 배경
-- 오픈된 공간에서 유저 서로가 맛있는 음식의 레시피를 공유하는 공간입니다!
-- 개발 구상 단계에서 저희 팀 4명은 배가 고팠습니다. 맛있는 음식이 먹고싶다는 이야기를 하는 도중 떠오른 아이디어로 개발하게 되었습니다.
+- 오픈된 공간에서 유저 서로가 스타크래프트라는 게임의 정보를 공유하는 공간입니다!
+- 개발 구상 단계에서 영화소개나 음악소개 사이트는 많은데 게임이야기를 공유하는 사이트는 잘 없어서 개발하게 되었습니다.
 - 이번 프로젝트는 각자가 주특기`개인의 선호에 따라 백엔드(Java Spring), 프론트엔드(React) 선택` 를 공부하고 진행하는 첫 협업이었습니다.
 ---
 ### 개발 과정
 
 #### 1. 개발 기간
-- `2021년 07월 09일(금) ~ 2021년 07월 15일(목) / 총 7일`
-- `설계 1일 / 개발 6일`
+- `2021년 10월 11일(월) ~ 2021년 10월 16일(토) / 총 6일`
+- `설계 1일 / 개발 5일`
 
 #### 2. 사용 언어
 - **Languages** : Java(Backend), React(Frontend)
@@ -35,9 +34,8 @@
 1. 서로 다른 개발환경에서의 연동(CORS)
 2. 회원가입 & Spring에서 JWT 방식의 로그인
 3. 게시판 구현(CRUD 구현, 이미지 업로드)
-4. 댓글 작성(CRUD 개념 적용)
-5. 검색
-6. 비밀번호 변경
+
+
 
 #### 4. 와이어프레임 설계(Figma 활용)
 [Figma 설계 보러가기](https://www.figma.com/file/oZF7U6mjOvXaIq3nfeeKKf/%ED%95%AD%ED%95%B499-%EB%AF%B8%EB%8B%88%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-24%EC%A1%B0?node-id=0%3A1)
@@ -89,7 +87,7 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://todayrecipe.shop.s3-website.ap-northeast-2.amazonaws.com","http://localhost:3000","http://todayrecipe.shop/")
+                .allowedOrigins("http://s3의 주소","http://localhost:3000","http://도메인주소/")
                 //클라이언트 로컬 주소임. 클라이언트에서 내 서버의 api에 접근 시 허용에 관한 부분. CORS.
                 //2개 이상의 origin에 대해서 허용할 수 있음!
                 .allowedMethods("POST","GET","PUT","DELETE","HEAD","OPTIONS") // 클라이언트에서 요청하는 메소드 어디까지 허용할 것인가.
@@ -107,7 +105,7 @@ public class WebConfig implements WebMvcConfigurer {
 
 계속 고민했던 부분은 그림의 `6번` 과정이었습니다. 서버에서 토큰 발행하고, 클라이언트에서 토큰을 포함해 요청하는 것 까지는 성공했으나, **서버에서 토큰을 어떻게 받고 검증할 지**가 가장 큰 고민이었습니다. **ARC**라는 API 테스트 툴로 유저 정보 인증이 필요한 API에 request 할 경우, 계속해서 오류가 발생했습니다.<br></br>
 
-개발기간이 총 7일이 주어졌는데, 이 문제를 해결하기 위해서 총 3.5일의 시간이 걸렸습니다.
+개발기간이 총 6일이 주어졌는데, 이 문제를 해결하기 위해서 총 3.5일의 시간이 걸렸습니다.
 
 **오류가 계속 발생했던 원인은 클라이언트에서 서버로 보내는 요청의 Header의 이름이 클라이언트-서버 간에 일치하지 않았기 때문이었습니다**
 ```java
@@ -115,4 +113,10 @@ public class WebConfig implements WebMvcConfigurer {
 public String resolveToken(HttpServletRequest request) {
      return request.getHeader("X-AUTH-TOKEN");
  }
-
+ 
+#### 2. 회고 및 피드백
+백엔드, 프론트엔드로 분리된 개발환경에서 각자 개발을 하고, 이를 한 개의 결과물로 만드는 과정에서 나타나는 문제(CORS, JWT인증)를 겪고 이를 해결해보는 좋은 경험이었습니다.
+주특기를 선택하고 공부하기 이전에 프로젝트를 진행할 때에는 프론트엔드, 백엔드 구분 없이 모두가 동일한 Repository의 동일한 file을 갖고 기능단위로 역할을 맡아 개발을 했었습니다.
+최초에 그렸던 와이어프레임과 완전히 동일하게(view)는 구현하지 못했지만, 기능적으로는 90% 이상 달성한 뿌듯한 프로젝트입니다.
+Spring 공부를 시작하고 혼자 프로젝트를 진행할 때에는 썩 예쁜 페이지를 만들지 못했지만, 프론트엔드 개발자들과 협업하면서 온전히 백엔드 개발에만 몰입할 수 있었고, 보기에도 예쁜 페이지를 만들 수 있었습니다.
+이번 프로젝트에서는 좋아요, 프로필사진의 소셜 기능을 담지 못했지만, 추후 더욱 연구해서 꼭 적용해보고 싶다는 생각을 했습니다.
